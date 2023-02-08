@@ -1,24 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import LoginSignup from "./pages/LoginSignup";
+
+// ⭐ use this page for react navigation
+// ⭐ Crete Pages in pages folder
+// ⭐ Crete Components in component folder
+// ⭐ follow "NewPage" <- naming case
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <LoginSignup />
+    </>
   );
 }
 
