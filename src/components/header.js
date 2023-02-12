@@ -1,13 +1,9 @@
 import React from "react";
 
-import styles from "./styles";
-
-import "../App.css";
-
 const Header = () => {
   return (
     <>
-      <div style={styles.header}>
+      <div className="header">
         <h1
           style={{
             marginTop: "10px",
@@ -15,6 +11,7 @@ const Header = () => {
             //marginLeft: "10px",
             fontStyle: "italic",
             color: "#66fcf1",
+            fontSize: "30px",
           }}
         >
           Learnify
@@ -22,27 +19,37 @@ const Header = () => {
         <div
           style={{
             flexGrow: 1,
+            display: "flex",
+            justifyContent: "center",
           }}
-        ></div>
+        >
+          <input
+            className="search"
+            type="text"
+            placeholder="Search for Tags , Articles and More"
+          />
+        </div>
         <div
           style={{
             display: "flex",
             flexDirection: "row",
-            marginTop: "3px",
             marginRight: "30px",
+            marginTop: "10px",
           }}
         >
           <h3
             style={{
               marginRight: "20px",
-              color: "#66fcf1",
+              color: "white",
+              fontSize: "15px",
             }}
           >
             About Us
           </h3>
           <h3
             style={{
-              color: "#66fcf1",
+              color: "white",
+              fontSize: "15px",
             }}
           >
             Contact
