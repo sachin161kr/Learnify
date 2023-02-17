@@ -1,4 +1,5 @@
 import React from "react";
+import { useHref } from "react-router-dom";
 
 import "../App.css";
 
@@ -12,7 +13,7 @@ const LoginSignup = () => {
         alignContent: "center",
         height: "85vh",
         maxWidth: "100%",
-        background: "grey"
+        backgroundImage: "linear-gradient(259deg, rgb(12 228 235 / 83%), rgb(217 87 156 / 54%))"
       }}
     >
       <form
@@ -21,7 +22,7 @@ const LoginSignup = () => {
           flexDirection: "column",
           width: "40%",
           margin: "30px",
-          background: "yellow",
+          // background: "yellow",
           alignItems: "center"
           
         }}
@@ -42,14 +43,14 @@ const LoginSignup = () => {
           flexDirection: "column",
           width: "40%",
           margin: "30px",
-          background: "red",
+          // background: "red",
           alignItems: "center"
         }}
       >
         <h1 style={{marginTop:"80px"}}>LOGIN</h1>
         <input className="input_login" placeholder="Email" type={"email"} required/>
         <input className="input_login" placeholder="Password" type={"password"}  required/>
-        <button className="login_btn">Login</button>
+        <button className="login_btn" >Login</button>
       </form>
     </div>
   );
