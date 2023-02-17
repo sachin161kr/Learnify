@@ -8,33 +8,48 @@ const LoginSignup = () => {
       style={{
         display: "flex",
         flexDirection: "row",
+        justifyContent: "center",
+        alignContent: "center",
+        height: "85vh",
+        maxWidth: "100%",
+        background: "grey"
       }}
     >
       <form
         style={{
           display: "flex",
           flexDirection: "column",
-          width: "300px",
+          width: "40%",
           margin: "30px",
+          background: "yellow",
+          alignItems: "center"
+          
         }}
       >
-        <input placeholder="Name" />
-        <input placeholder="Email" />
-        <input placeholder="Password" />
-        <input placeholder="Confirm Password" />
-        <button>Register</button>
+        <h1 style={{marginTop:"80px"}}>REGISTER</h1>
+        <input className="input_login" placeholder="Name" type={"text"} />
+        <input className="input_login" placeholder="Email" type={"email"} required/>
+        <input className="input_login" placeholder="Password" type={"password"}  required/>
+        <input className="input_login" placeholder="Confirm Password" type={"password"} required/>
+        <button className="login_btn">Register</button>
       </form>
+      <div className="login_or">
+        <h2>OR</h2>
+      </div>
       <form
         style={{
           display: "flex",
           flexDirection: "column",
-          width: "300px",
+          width: "40%",
           margin: "30px",
+          background: "red",
+          alignItems: "center"
         }}
       >
-        <input placeholder="Email" />
-        <input placeholder="Password" />
-        <button>Login</button>
+        <h1 style={{marginTop:"80px"}}>LOGIN</h1>
+        <input className="input_login" placeholder="Email" type={"email"} required/>
+        <input className="input_login" placeholder="Password" type={"password"}  required/>
+        <button className="login_btn">Login</button>
       </form>
     </div>
   );
