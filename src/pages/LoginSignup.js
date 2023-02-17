@@ -1,9 +1,78 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHref } from "react-router-dom";
+
+import axios from "axios";
 
 import "../App.css";
 
 const LoginSignup = () => {
+  const [name, setName] = useState("");
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmpassword, setConfirmPassword] = useState("");
+
+  const handleRegister = () => {
+    if (password != confirmpassword) {
+      alert("Confirmed Password is not same");
+      return;
+    }
+
+    if (password.length < 8) {
+      alert("Password length should atleast be 8");
+      return;
+    }
+
+    const body = {
+      name: name,
+      email: email,
+      password: password,
+    };
+
+    axios
+      .post("https://learnify-server-mu.vercel.app/api/register", body)
+      .then(function (res) {
+        console.log(res.data);
+        if (res.data.status === "error") {
+          alert(res.data.error + ", Registration Failed");
+        } else {
+          alert("Registration Success");
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+        alert("Registration Failed");
+      });
+  };
+
+  const handleLogin = () => {
+    if (password.length < 8) {
+      alert("Please enter a valid password");
+      return;
+    }
+
+    const body = {
+      email: email,
+      password: password,
+    };
+
+    axios
+      .post("https://learnify-server-mu.vercel.app/api/login", body)
+      .then(function (res) {
+        console.log(res.data);
+        if (res.data.status === "error") {
+          alert("Login Failed");
+        } else {
+          alert("Login Success");
+          window.location.href = "/homescreen";
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+        alert("Login Failed");
+      });
+  };
+
   return (
     <div
       style={{
@@ -13,7 +82,8 @@ const LoginSignup = () => {
         alignContent: "center",
         height: "85vh",
         maxWidth: "100%",
-        backgroundImage: "linear-gradient(259deg, rgb(12 228 235 / 83%), rgb(217 87 156 / 54%))"
+        backgroundImage:
+          "linear-gradient(259deg, rgb(12 228 235 / 83%), rgb(217 87 156 / 54%))",
       }}
     >
       <form
@@ -23,16 +93,54 @@ const LoginSignup = () => {
           width: "40%",
           margin: "30px",
           // background: "yellow",
-          alignItems: "center"
-          
+          alignItems: "center",
         }}
       >
-        <h1 style={{marginTop:"80px"}}>REGISTER</h1>
-        <input className="input_login" placeholder="Name" type={"text"} />
-        <input className="input_login" placeholder="Email" type={"email"} required/>
-        <input className="input_login" placeholder="Password" type={"password"}  required/>
-        <input className="input_login" placeholder="Confirm Password" type={"password"} required/>
-        <button className="login_btn">Register</button>
+        <h1 style={{ marginTop: "80px" }}>REGISTER</h1>
+        <input
+          className="input_login"
+          placeholder="Name"
+          onChange={(e) => {
+            setName(e.target.value);
+          }}
+        />
+        <input
+          className="input_login"
+          placeholder="Email"
+          type={"email"}
+          required
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+        />
+        <input
+          className="input_login"
+          placeholder="Password"
+          type={"password"}
+          required
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
+        />
+        <input
+          className="input_login"
+          placeholder="Confirm Password"
+          type={"password"}
+          required
+          onChange={(e) => {
+            setConfirmPassword(e.target.value);
+          }}
+        />
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            handleRegister();
+            //console.log(name, email, password);
+          }}
+          className="login_btn"
+        >
+          Register
+        </button>
       </form>
       <div className="login_or">
         <h2>OR</h2>
@@ -44,13 +152,37 @@ const LoginSignup = () => {
           width: "40%",
           margin: "30px",
           // background: "red",
-          alignItems: "center"
+          alignItems: "center",
         }}
       >
-        <h1 style={{marginTop:"80px"}}>LOGIN</h1>
-        <input className="input_login" placeholder="Email" type={"email"} required/>
-        <input className="input_login" placeholder="Password" type={"password"}  required/>
-        <button className="login_btn" >Login</button>
+        <h1 style={{ marginTop: "80px" }}>LOGIN</h1>
+        <input
+          className="input_login"
+          placeholder="Email"
+          type={"email"}
+          required
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+        />
+        <input
+          className="input_login"
+          placeholder="Password"
+          type={"password"}
+          required
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
+        />
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            handleLogin();
+          }}
+          className="login_btn"
+        >
+          Login
+        </button>
       </form>
     </div>
   );
