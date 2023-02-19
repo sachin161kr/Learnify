@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+
+import SearchBar from "./searchBar";
 
 const Header = () => {
   return (
@@ -22,13 +24,7 @@ const Header = () => {
             display: "flex",
             justifyContent: "center",
           }}
-        >
-          <input
-            className="search"
-            type="text"
-            placeholder="Search for Tags , Articles and More"
-          />
-        </div>
+        ></div>
         <div
           style={{
             display: "flex",

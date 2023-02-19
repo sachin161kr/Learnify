@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useHref } from "react-router-dom";
 
 import axios from "axios";
 
@@ -12,8 +11,11 @@ const LoginSignup = () => {
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmPassword] = useState("");
 
+  const [toggle, setToogle] = useState(false);
+  const [toggle2, setToogle2] = useState(false);
+
   const handleRegister = () => {
-    if (password != confirmpassword) {
+    if (password !== confirmpassword) {
       alert("Confirmed Password is not same");
       return;
     }
@@ -132,6 +134,16 @@ const LoginSignup = () => {
           }}
         />
         <button
+          style={{
+            backgroundColor: toggle === false ? "#1f2833" : "red",
+            color: "white",
+          }}
+          onMouseEnter={() => {
+            setToogle(!toggle);
+          }}
+          onMouseLeave={() => {
+            setToogle(!toggle);
+          }}
           onClick={(e) => {
             e.preventDefault();
             handleRegister();
@@ -139,7 +151,7 @@ const LoginSignup = () => {
           }}
           className="login_btn"
         >
-          Register
+          Join Us!
         </button>
       </form>
       <div className="login_or">
@@ -175,13 +187,23 @@ const LoginSignup = () => {
           }}
         />
         <button
+          style={{
+            backgroundColor: toggle2 === false ? "#1f2833" : "red",
+            color: "white",
+          }}
+          onMouseEnter={() => {
+            setToogle2(!toggle2);
+          }}
+          onMouseLeave={() => {
+            setToogle2(!toggle2);
+          }}
           onClick={(e) => {
             e.preventDefault();
             handleLogin();
           }}
           className="login_btn"
         >
-          Login
+          Continue
         </button>
       </form>
     </div>
