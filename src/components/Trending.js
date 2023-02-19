@@ -10,6 +10,7 @@ const Trending = () => {
             fontWeight: "bold",
             fontSize: "20px",
             marginTop: "20px",
+            
           }}
         >
           Trending Tags
