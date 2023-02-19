@@ -4,14 +4,18 @@ import avatar from "../assets/avatar.png";
 
 const Post = () => {
   return (
+    <div className="blogs">
     <div
       style={{
         display: "flex",
         flexDirection: "row",
-        height: "280px",
-        width: "650px",
-        margin: "20px",
-        background: "yellow",
+        height: "50vh",
+        width: "100%",
+        // marginLeft:"auto",
+        // marginRight:"auto",
+        background: "white",
+        borderBottom : "2px solid  #acacab4d"
+        // border: 2px solid  #acacab4d;
       }}
     >
       <div
@@ -48,27 +52,32 @@ const Post = () => {
         <div style={{ margin: "20px" }}>
           <div
             style={{
-              height: "120px",
-              width: "400px",
-              background: "green",
+              height: "150px",
+              width: "auto",
+              backgroundColor : "wheat",
             }}
           >
             Hello hwyy what are u doing
           </div>
-          <div style={{ fontSize: "12px" }}>Read more...</div>
+          <div style={{ fontSize: "12px" , margin: "10px" }}>Read more...</div>
         </div>
       </div>
       <div
         style={{
-          marginTop: "40px",
-          height: "200px",
-          width: "200px",
-          background: "red",
-          marginRight: "20px",
+          height: "60%",
+          width: "30%",
+          background: "grey",
+          borderRadius : "10px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          margin: "auto 20px auto 20px",
         }}
       >
         Image
       </div>
+    </div>
     </div>
   );
 };

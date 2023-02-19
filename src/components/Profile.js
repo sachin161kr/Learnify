@@ -2,14 +2,17 @@ import React from "react";
 
 const Profile = () => {
   return (
-    <>
+    // <>
       <div
         style={{
-          marginTop: "10px",
-          width: "460px",
-          height: "400px",
+          margin: "10px 0px",
+          width: "25%",
+          height: "50vh",
           display: "flex",
           flexDirection: "row",
+          borderRadius: "7px",
+          backgroundColor : "white",
+          // border: "2px solid black"
         }}
       >
         <div style={{ flexGrow: 1, marginTop: "10px", marginLeft: "10px" }}>
@@ -37,7 +40,7 @@ const Profile = () => {
           }}
         ></div>
       </div>
-    </>
+   
   );
 };
 
