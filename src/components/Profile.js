@@ -12,7 +12,8 @@ const Profile = () => {
           flexDirection: "row",
           borderRadius: "7px",
           backgroundColor : "white",
-          // border: "2px solid black"
+          position: "sticky",
+          top: "10px"
         }}
       >
         <div style={{ flexGrow: 1, marginTop: "10px", marginLeft: "10px" }}>

@@ -24,7 +24,14 @@ const Header = () => {
             display: "flex",
             justifyContent: "center",
           }}
-        ></div>
+        >
+          <input
+            className="search"
+            type="text"
+            placeholder="Search for Tags , Articles and More"
+          />
+          <button className="search-btn">Search</button>
+        </div>
         <div
           style={{
             display: "flex",

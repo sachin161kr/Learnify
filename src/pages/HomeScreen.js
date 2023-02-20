@@ -14,7 +14,7 @@ const HomeScreen = () => {
           display: "flex",
           flexDirection: "row",
           // backgroundImage: "linear-gradient(259deg, rgb(12 228 235 / 83%), rgb(217 87 156 / 54%))"
-          backgroundColor : "#acacab4d"
+          backgroundColor : "rgb(238 238 238)"
         }}
       >
         <Trending />
