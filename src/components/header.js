@@ -28,6 +28,7 @@ const Header = () => {
             type="text"
             placeholder="Search for Tags , Articles and More"
           />
+          <button className="search-btn">Search</button>
         </div>
         <div
           style={{
