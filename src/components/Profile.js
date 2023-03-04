@@ -1,47 +1,29 @@
 import React from "react";
 
 const Profile = () => {
+  const handleLogout = () => {
+    window.location.href = "/";
+  };
+
   return (
     // <>
-      <div
-        style={{
-          margin: "10px 0px",
-          width: "25%",
-          height: "50vh",
-          display: "flex",
-          flexDirection: "row",
-          borderRadius: "7px",
-          backgroundColor : "white",
-          position: "sticky",
-          top: "10px"
-        }}
-      >
-        <div style={{ flexGrow: 1, marginTop: "10px", marginLeft: "10px" }}>
-          <div style={{ fontSize: "20px", fontWeight: "bold" }}>
-            Good Afternoon !! Sachin
-          </div>
-          <div
-            style={{
-              marginTop: "20px",
-            }}
-          >
-            <div>Current Level : ⭐⭐</div>
-            <div>Contribution : +3</div>
-            <div>Total Articles Read : 15</div>
-            <div>Reading Time : 132 min</div>
-          </div>
+    <div className="m-4 w-1/4 h-96 flex flex-col rounded-lg bg-white sticky top-3 border-2 border-black">
+      <div className="h-72 mt-3 p-3 ml-3">
+        <div className="text-lg font-bold">Good Afternoon !! Sachin</div>
+        <div className="mt-3">
+          <div>Current Level : ⭐⭐</div>
+          <div>Contribution : +3</div>
+          <div>Total Articles Read : 15</div>
+          <div>Reading Time : 132 min</div>
         </div>
-        <div
-          style={{
-            height: "120px",
-            width: "120px",
-            background: "pink",
-            borderRadius: "100%",
-            margin: "20px",
-          }}
-        ></div>
       </div>
-   
+      <button
+        className="h-8 mt-3 rounded-md w-24 self-center border-2 border-black "
+        onClick={handleLogout}
+      >
+        Logout
+      </button>
+    </div>
   );
 };
 

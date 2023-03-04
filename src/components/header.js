@@ -5,58 +5,16 @@ import SearchBar from "./searchBar";
 const Header = () => {
   return (
     <>
-      <div className="header">
-        <h1
-          style={{
-            marginTop: "10px",
-            marginLeft: "20px",
-            //marginLeft: "10px",
-            fontStyle: "italic",
-            color: "#66fcf1",
-            fontSize: "30px",
-          }}
-        >
+      <div className="bg-[#1f2833] h-12 w-full flex flex-row]">
+        <div className="text-white ml-3 mt-2 text-xl font-bold italic">
           Learnify
-        </h1>
-        <div
-          style={{
-            flexGrow: 1,
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <input
-            className="search"
-            type="text"
-            placeholder="Search for Tags , Articles and More"
-          />
-          <button className="search-btn">Search</button>
         </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            marginRight: "30px",
-            marginTop: "10px",
-          }}
-        >
-          <h3
-            style={{
-              marginRight: "20px",
-              color: "white",
-              fontSize: "15px",
-            }}
-          >
-            About Us
-          </h3>
-          <h3
-            style={{
-              color: "white",
-              fontSize: "15px",
-            }}
-          >
-            Contact
-          </h3>
+        <div className="grow flex justify-center"></div>
+        <div className="mr-3">
+          <ul className="list-none">
+            <li className="text-white inline-block m-3">Contact</li>
+            <li className="text-white inline-block m-3">About</li>
+          </ul>
         </div>
       </div>
     </>

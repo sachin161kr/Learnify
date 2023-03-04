@@ -12,6 +12,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // ⭐ Crete Pages in pages folder
 // ⭐ Crete Components in component folder
 // ⭐ follow "NewPage" <- naming case
+// ⭐ use tailwing css
 
 function App() {
   const router = createBrowserRouter([
@@ -27,15 +28,9 @@ function App() {
 
   return (
     <>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          height: "100vh",
-        }}
-      >
+      <div className="flex flex-col h-screen">
         <Header />
-        <div style={{ flexGrow: 1, background: "" }}>
+        <div className="grow">
           <RouterProvider router={router} />
         </div>
         <Footer />

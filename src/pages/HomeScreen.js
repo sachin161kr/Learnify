@@ -8,17 +8,9 @@ import Trending from "../components/Trending";
 const HomeScreen = () => {
   return (
     <>
-      <div
-        style={{
-          maxWidth: "100%",
-          display: "flex",
-          flexDirection: "row",
-          // backgroundImage: "linear-gradient(259deg, rgb(12 228 235 / 83%), rgb(217 87 156 / 54%))"
-          backgroundColor : "rgb(238 238 238)"
-        }}
-      >
+      <div className="max-w-full flex flex-row bg-gray-100">
         <Trending />
-        <div className="body">
+        <div className="grow mx-3">
           <Post />
           <Post />
           <Post />
