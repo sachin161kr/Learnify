@@ -52,16 +52,18 @@ const Register = ({ mode, setMode, setLoading }) => {
 
   return (
     <form className="flex flex-col w-1/4 border-black m-12 content-center">
-      <h1 className="mt-5 font-bold self-center text-xl">REGISTER</h1>
+      <div className="text-white mt-5 font-bold self-center text-xl">
+        REGISTER
+      </div>
       <input
-        className="h-5 w-72 border-4  self-center rounded-lg p-5 m-2"
-        placeholder="Name"
+        className="h-5 w-72 bg-[#202021] self-center p-5 m-2"
+        placeholder="username"
         onChange={(e) => {
           setName(e.target.value);
         }}
       />
       <input
-        className="h-5 w-72 border-4 self-center rounded-lg p-5 m-2"
+        className="h-5 w-72 bg-[#202021] self-center p-5 m-2"
         placeholder="Email"
         type={"email"}
         required
@@ -70,7 +72,7 @@ const Register = ({ mode, setMode, setLoading }) => {
         }}
       />
       <input
-        className="h-5 w-72 border-4 self-center rounded-lg p-5 m-2"
+        className="h-5 w-72 bg-[#202021] self-center p-5 m-2"
         placeholder="Password"
         type={"password"}
         required
@@ -79,7 +81,7 @@ const Register = ({ mode, setMode, setLoading }) => {
         }}
       />
       <input
-        className="h-5 w-72 border-4 self-center rounded-lg p-5 m-2"
+        className="h-5 w-72 bg-[#202021] self-center p-5 m-2"
         placeholder="Confirm Password"
         type={"password"}
         required
@@ -94,7 +96,7 @@ const Register = ({ mode, setMode, setLoading }) => {
           handleRegister();
           //console.log(name, email, password);
         }}
-        className="h-12 w-72 bg-[#1f2833] shadow-white border-2 rounded-lg text-white self-center mt-5"
+        className="h-12 w-72 bg-[#1f2833] text-white self-center mt-5"
       >
         Join Us!
       </button>
@@ -104,7 +106,7 @@ const Register = ({ mode, setMode, setLoading }) => {
           setMode(!mode);
           //console.log(name, email, password);
         }}
-        className="h-12 w-72 shadow-white border-2 rounded-lg bg-white self-center mt-5"
+        className="h-12 w-72 bg-[#202021] text-white self-center mt-5"
       >
         Login
       </button>

@@ -7,18 +7,28 @@ const Profile = () => {
 
   return (
     // <>
-    <div className="m-4 w-1/4 h-96 flex flex-col rounded-lg bg-white sticky top-3 border-2 border-black">
-      <div className="h-72 mt-3 p-3 ml-3">
-        <div className="text-lg font-bold">Good Afternoon !! Sachin</div>
+    <div className="m-4 w-1/4 h-96 flex flex-col rounded-lg bg-[#202021] sticky top-3">
+      <div className="h-60 mt-3 p-3 ml-3">
+        <div className="text-lg text-white font-bold">
+          Good Afternoon !! Sachin
+        </div>
         <div className="mt-3">
-          <div>Current Level : ⭐⭐</div>
-          <div>Contribution : +3</div>
-          <div>Total Articles Read : 15</div>
-          <div>Reading Time : 132 min</div>
+          <div className="text-white">Current Level : ⭐⭐</div>
+          <div className="text-white">Contribution : +3</div>
+          <div className="text-white">Total Articles Read : 15</div>
+          <div className="text-white">Reading Time : 132 min</div>
         </div>
       </div>
       <button
-        className="h-8 mt-3 rounded-md w-24 self-center border-2 border-black "
+        className="text-white h-8 mt-3 bg-[#1f2833] text-white rounded-md w-24 self-center p-2"
+        onClick={() => {
+          window.location.href = "/writepost";
+        }}
+      >
+        Write Post
+      </button>
+      <button
+        className="text-white h-8 mt-3 bg-[#1f2833] text-white rounded-md w-24 self-center p-2"
         onClick={handleLogout}
       >
         Logout

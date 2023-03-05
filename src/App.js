@@ -5,6 +5,7 @@ import Header from "./components/header";
 import Footer from "./components/Footer";
 
 import HomeScreen from "./pages/HomeScreen";
+import WritePost from "./pages/WritePost";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -23,6 +24,10 @@ function App() {
     {
       path: "/homescreen",
       element: <HomeScreen />,
+    },
+    {
+      path: "/writepost",
+      element: <WritePost />,
     },
   ]);
 

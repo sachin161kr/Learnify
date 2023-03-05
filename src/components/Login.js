@@ -9,6 +9,7 @@ const Login = ({ mode, setMode, setLoading }) => {
   const handleLogin = () => {
     if (password.length < 8) {
       alert("Please enter a valid password");
+      setLoading(false);
       return;
     }
 
@@ -38,9 +39,9 @@ const Login = ({ mode, setMode, setLoading }) => {
 
   return (
     <form className="flex flex-col w-1/4 border-black m-12 content-center">
-      <h1 className="mt-5 font-bold self-center text-xl">Login</h1>
+      <div className="m-5 self-center font-bold text-white text-xl">HEY...</div>
       <input
-        className="h-5 w-72 border-4 self-center rounded-lg p-5 m-2"
+        className="h-5 w-72  text-white self-center bg-[#202021] rounded-lg p-5 m-2"
         placeholder="Email"
         type={"email"}
         required
@@ -49,7 +50,7 @@ const Login = ({ mode, setMode, setLoading }) => {
         }}
       />
       <input
-        className="h-5 w-72 border-4 self-center rounded-lg p-5 m-2"
+        className="h-5 w-72  text-white self-center bg-[#202021] rounded-lg p-5 m-2"
         placeholder="Password"
         type={"password"}
         required
@@ -64,7 +65,7 @@ const Login = ({ mode, setMode, setLoading }) => {
           handleLogin();
           //console.log(name, email, password);
         }}
-        className="h-12 w-72  text-white border-2 rounded-lg bg-[#1f2833] self-center mt-5"
+        className="h-12 w-72   text-white  rounded-lg bg-[#1f2833] self-center mt-5"
       >
         Login
       </button>
@@ -74,7 +75,7 @@ const Login = ({ mode, setMode, setLoading }) => {
           setMode(!mode);
           //console.log(name, email, password);
         }}
-        className="h-12 w-72 shadow-white border-2 rounded-lg bg-white self-center mt-5"
+        className="h-12 w-72   rounded-lg   text-white self-center mt-5"
       >
         Register
       </button>
