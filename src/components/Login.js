@@ -26,6 +26,9 @@ const Login = ({ mode, setMode, setLoading }) => {
           setLoading(false);
           alert("Login Failed");
         } else {
+          localStorage.setItem("isLoggedIn", true);
+          localStorage.setItem("username", res.data.username);
+          localStorage.setItem("email", res.data.email);
           setLoading(false);
           alert("Login Success");
           window.location.href = "/homescreen";
