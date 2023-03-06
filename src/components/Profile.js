@@ -12,9 +12,7 @@ const Profile = () => {
     // <>
     <div className="m-4 w-1/4 h-96 flex flex-col rounded-lg bg-[#202021] sticky top-3">
       <div className="h-60 mt-3 p-3 ml-3">
-        <div className="text-lg text-white font-bold">
-          Good Afternoon !! {username}
-        </div>
+        <div className="text-lg text-white font-bold">Hey {username}</div>
         <div className="mt-3">
           <div className="text-white">Current Level : ⭐⭐</div>
           <div className="text-white">Contribution : +3</div>

@@ -3,7 +3,7 @@ const Post = ({ allPosts }) => {
   return (
     <>
       {allPosts.map((e) => (
-        <div className="flex flex-row h-96 w-full bg-[#202021] mt-4 rounded-md ">
+        <div className="flex flex-row w-full bg-[#202021] mt-4 rounded-md ">
           <div className="grow">
             <div className="flex flex-row m-5">
               <div>
@@ -16,10 +16,9 @@ const Post = ({ allPosts }) => {
               <div className="text-sm text-white">3 min Read</div>
             </div>
             <div className="m-5">
-              <div className="h-36 text-xl text-white bg-[#1f2833] p-2 rounded-md">
+              <div className="text-xl text-white bg-[#1f2833] p-2 rounded-md">
                 {e.body}
               </div>
-              <div className="mt-1 text-sm text-white p-2">Read more...</div>
             </div>
           </div>
         </div>

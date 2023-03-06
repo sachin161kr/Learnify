@@ -25,6 +25,21 @@ const WritePost = () => {
   ];
 
   const makePost = () => {
+    if (title.length == 0) {
+      alert("Title cannot be empty!!");
+      return;
+    }
+
+    if (post.length == 0) {
+      alert("Post body cannot be empty!!");
+      return;
+    }
+
+    if (tag == null) {
+      alert("Please select a Tag");
+      return;
+    }
+
     setLoading(true);
     const body = {
       username: localStorage.getItem("username"),

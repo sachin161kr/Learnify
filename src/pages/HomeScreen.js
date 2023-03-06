@@ -42,7 +42,7 @@ const HomeScreen = () => {
     <>
       <div className="max-w-full bg-[#1f2833] flex flex-row">
         <Trending />
-        <div className="grow mx-3">
+        <div className="w-2/3 mx-3">
           {loading === true ? (
             <ActivityLoader loading={loading} />
           ) : allPosts.length === 0 ? (
