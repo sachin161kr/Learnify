@@ -7,8 +7,8 @@ const Post = ({ allPosts }) => {
           <div className="grow">
             <div className="flex flex-row m-5">
               <div>
-                <div className="text-white text-lg ">{e.username}</div>
-                <div className="text-white text-md">10 min ago</div>
+                <div className="text-white text-md ">{e.username}</div>
+                <div className="text-white text-sm">10 min ago</div>
               </div>
             </div>
             <div className="m-5">
@@ -16,7 +16,7 @@ const Post = ({ allPosts }) => {
               <div className="text-sm text-white">3 min Read</div>
             </div>
             <div className="m-5">
-              <div className="text-xl text-white bg-[#1f2833] p-2 rounded-md">
+              <div className="text-md text-white bg-[#1f2833] p-2 rounded-md">
                 {e.body}
               </div>
             </div>
