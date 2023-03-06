@@ -26,6 +26,7 @@ const Login = ({ mode, setMode, setLoading }) => {
           setLoading(false);
           alert("Login Failed");
         } else {
+          console.log(res.data);
           localStorage.setItem("isLoggedIn", true);
           localStorage.setItem("username", res.data.username);
           localStorage.setItem("email", res.data.email);
@@ -36,6 +37,7 @@ const Login = ({ mode, setMode, setLoading }) => {
       })
       .catch(function (error) {
         console.log(error);
+        setLoading(false);
         alert("Login Failed");
       });
   };

@@ -25,7 +25,7 @@ const Register = ({ mode, setMode, setLoading }) => {
     // });
 
     const body = {
-      name: name,
+      username: name,
       email: email,
       password: password,
     };
@@ -56,14 +56,14 @@ const Register = ({ mode, setMode, setLoading }) => {
         REGISTER
       </div>
       <input
-        className="h-5 w-72 bg-[#202021] self-center p-5 m-2"
+        className="text-white h-5 w-72 bg-[#202021] self-center p-5 m-2"
         placeholder="username"
         onChange={(e) => {
           setName(e.target.value);
         }}
       />
       <input
-        className="h-5 w-72 bg-[#202021] self-center p-5 m-2"
+        className="text-white h-5 w-72 bg-[#202021] self-center p-5 m-2"
         placeholder="Email"
         type={"email"}
         required
@@ -72,7 +72,7 @@ const Register = ({ mode, setMode, setLoading }) => {
         }}
       />
       <input
-        className="h-5 w-72 bg-[#202021] self-center p-5 m-2"
+        className="text-white h-5 w-72 bg-[#202021] self-center p-5 m-2"
         placeholder="Password"
         type={"password"}
         required
@@ -81,7 +81,7 @@ const Register = ({ mode, setMode, setLoading }) => {
         }}
       />
       <input
-        className="h-5 w-72 bg-[#202021] self-center p-5 m-2"
+        className="text-white h-5 w-72 bg-[#202021] self-center p-5 m-2"
         placeholder="Confirm Password"
         type={"password"}
         required
