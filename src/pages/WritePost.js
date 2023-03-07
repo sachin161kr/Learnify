@@ -75,7 +75,7 @@ const WritePost = () => {
       {loading === true ? (
         <ActivityLoader loading={loading} />
       ) : (
-        <div className="flex flex-row h-full ">
+        <div className="writepost flex flex-row h-full ">
           <div className="flex  flex-col h-2/3 w-1/2 mt-10 ml-10">
             <input
               value={title}

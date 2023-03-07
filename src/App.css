@@ -1,7 +1,7 @@
 @media screen and (max-width: 1040px) {
   * {
     align-self: center;
-    max-width: 100%;
+    /* max-width: 100%; */
   }
 
   .profile-class {
@@ -14,6 +14,11 @@
   }
 
   .homescreen {
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .writepost {
     flex-direction: column;
   }
 }
