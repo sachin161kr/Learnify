@@ -10,7 +10,7 @@ const Profile = () => {
 
   return (
     // <>
-    <div className="m-4 w-1/4 h-96 flex flex-col rounded-lg bg-[#202021] sticky top-3">
+    <div className="profile-class m-4 w-1/4 h-96 flex flex-col rounded-lg bg-[#202021] sticky top-3">
       <div className="h-60 mt-3 p-3 ml-3">
         <div className="text-lg text-white font-bold">Hey {username}</div>
         <div className="mt-3">

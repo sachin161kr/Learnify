@@ -40,7 +40,7 @@ const HomeScreen = () => {
 
   return (
     <>
-      <div className="max-w-full bg-[#1f2833] flex flex-row">
+      <div className="homescreen max-w-full bg-[#1f2833] flex flex-row">
         <Trending />
         <div className="w-2/3 mx-3">
           {loading === true ? (
