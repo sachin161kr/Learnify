@@ -51,7 +51,7 @@ const Register = ({ mode, setMode, setLoading }) => {
   };
 
   return (
-    <form className="flex flex-col w-1/4 border-black m-12 content-center">
+    <form className="register-component flex flex-col w-1/4 border-black m-12 content-center">
       <div className="text-white mt-5 font-bold self-center text-xl">
         REGISTER
       </div>

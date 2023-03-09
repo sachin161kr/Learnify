@@ -3,7 +3,7 @@ const Post = ({ allPosts }) => {
   return (
     <>
       {allPosts.map((e) => (
-        <div className="flex flex-row w-full bg-[#202021] mt-4 rounded-md ">
+        <div className="post flex flex-row w-full bg-[#202021] mt-4 rounded-md ">
           <div className="grow">
             <div className="flex flex-row m-5">
               <div>

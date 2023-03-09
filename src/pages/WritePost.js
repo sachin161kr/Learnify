@@ -95,7 +95,7 @@ const WritePost = () => {
               placeholder="Start writing here!!!"
             />
           </div>
-          <div className="flex flex-row mt-10">
+          <div className="writepost-end flex flex-row mt-10">
             <ReactDropdown
               className="ml-10 h-12 bg-[#1f2833] text-white w-64 text-center rounded-md p-3 mt-5"
               options={options}

@@ -1,24 +1,48 @@
 @media screen and (max-width: 1040px) {
-  * {
-    align-self: center;
-    /* max-width: 100%; */
+  .login-component {
+    width: 400px;
+  }
+
+  .register-component {
+    width: 400px;
   }
 
   .profile-class {
     position: relative;
-    min-width: 300px;
+    align-self: center;
+    flex-grow: 1;
+    min-width: 400px;
   }
 
   .trending-class {
+    align-self: center;
+    flex-grow: 1;
+    min-width: 400px;
     position: relative;
   }
 
   .homescreen {
     flex-direction: column;
+    border: 2px solid black;
+  }
+
+  .post {
+    min-width: 400px;
     flex-grow: 1;
+    align-self: center;
   }
 
   .writepost {
     flex-direction: column;
+    min-width: 400px;
+    flex-grow: 1;
+    align-self: center;
+  }
+
+  .writepost-end {
+    flex-direction: column;
+    min-width: 400px;
+    margin-right: 50px;
+    align-self: center;
   }
 }
