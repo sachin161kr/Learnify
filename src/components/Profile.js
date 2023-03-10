@@ -1,11 +1,15 @@
 import React from "react";
 
+import { useNavigate } from "react-router-dom";
+
 const Profile = () => {
+  const navigate = useNavigate();
+
   const username = localStorage.getItem("username");
 
   const handleLogout = () => {
     localStorage.clear();
-    window.location.href = "/";
+    navigate("/", { replace: true });
   };
 
   return (
@@ -23,7 +27,11 @@ const Profile = () => {
         <button
           className="text-white h-8 mt-3 bg-[#1f2833] text-white rounded-md w-24 self-center p-2"
           onClick={() => {
-            window.location.href = "/writepost";
+            navigate("/writepost", {
+              state: {
+                edit: false,
+              },
+            });
           }}
         >
           Write Post

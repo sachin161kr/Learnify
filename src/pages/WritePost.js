@@ -5,7 +5,19 @@ import ActivityLoader from "../components/ActivityLoader";
 
 import axios from "axios";
 
+import { useLocation, useNavigate } from "react-router-dom";
+
 const WritePost = () => {
+  const { state } = useLocation();
+
+  const navigate = useNavigate();
+
+  console.log(state);
+
+  const edit = state.edit;
+
+  const oldTitle = state.title;
+
   const [title, setTitle] = useState("");
 
   const [post, setPost] = useState("");
@@ -13,6 +25,8 @@ const WritePost = () => {
   const [tag, setTag] = useState(null);
 
   const [loading, setLoading] = useState(false);
+
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
 
   const options = [
     "C++",
@@ -23,6 +37,41 @@ const WritePost = () => {
     "Backend",
     "Frontend",
   ];
+
+  const editPost = () => {
+    setLoading(true);
+
+    if (title.length == 0) {
+      alert("Title cannot be empty!!");
+      return;
+    }
+
+    if (post.length == 0) {
+      alert("Post body cannot be empty!!");
+      return;
+    }
+
+    if (tag == null) {
+      alert("Please select a Tag");
+      return;
+    }
+
+    axios
+      .post("https://learnify-server-mu.vercel.app/api/editPost", {
+        title: oldTitle,
+        newTitle: title,
+        newBody: post,
+      })
+      .then(() => {
+        setLoading(false);
+        alert("Successfully Updated");
+        navigate("/homescreen", { replace: true });
+      })
+      .catch(() => {
+        setLoading(false);
+        alert("Something went wrong");
+      });
+  };
 
   const makePost = () => {
     if (title.length == 0) {
@@ -60,7 +109,7 @@ const WritePost = () => {
         setLoading(false);
         console.log("Post Success");
         alert("Post Success");
-        window.location.href = "/homescreen";
+        navigate("/homescreen", { replace: true });
       })
       .catch((e) => {
         setLoading(false);
@@ -106,15 +155,28 @@ const WritePost = () => {
                 value={tag}
                 placeholder="Select Tag"
               />
-              <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  makePost();
-                }}
-                className="ml-10 bg-[#1f2833] text-white  rounded-md p-3 mt-5 h-12"
-              >
-                Submit
-              </button>
+
+              {edit == true ? (
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    editPost();
+                  }}
+                  className="ml-10 bg-[#1f2833] text-white  rounded-md p-3 mt-5 h-12"
+                >
+                  Update
+                </button>
+              ) : (
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    makePost();
+                  }}
+                  className="ml-10 bg-[#1f2833] text-white  rounded-md p-3 mt-5 h-12"
+                >
+                  Submit
+                </button>
+              )}
             </div>
           </div>
         </div>

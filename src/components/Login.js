@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import axios from "axios";
 
 const Login = ({ mode, setMode, setLoading }) => {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -32,7 +36,7 @@ const Login = ({ mode, setMode, setLoading }) => {
           localStorage.setItem("email", res.data.email);
           setLoading(false);
           alert("Login Success");
-          window.location.href = "/homescreen";
+          navigate("/homescreen", { replace: true });
         }
       })
       .catch(function (error) {
@@ -43,7 +47,7 @@ const Login = ({ mode, setMode, setLoading }) => {
   };
 
   return (
-    <form className="flex flex-col md:w-full w-1/4 m-12 content-center">
+    <form className="flex flex-col md:h-full md:w-full w-1/4 m-12 content-center">
       <div className="m-5 self-center font-bold text-white text-xl">HEY...</div>
       <input
         className="h-5 w-72  text-white self-center bg-[#202021] rounded-lg p-5 m-2"

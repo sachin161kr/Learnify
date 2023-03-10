@@ -13,7 +13,7 @@ const LoginSignup = () => {
   return (
     <>
       <ActivityLoader loading={loading} />
-      <div className="flex flex-row h-full w-full content-center">
+      <div className="flex flex-row content-center">
         {mode == true ? (
           <Register mode={mode} setMode={setMode} setLoading={setLoading} />
         ) : (
