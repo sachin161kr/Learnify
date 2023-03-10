@@ -5,6 +5,9 @@ module.exports = {
     fontFamily: {
       display: ["Josefin Sans", "regular"],
     },
+    screens: {
+      md: { max: "1140px" },
+    },
   },
   plugins: [],
 };

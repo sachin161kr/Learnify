@@ -1,8 +1,4 @@
 @media screen and (max-width: 1040px) {
-  * {
-    max-width: 100%;
-  }
-
   .write-post-parent {
     display: flex;
     height: 100%;
@@ -36,20 +32,6 @@
 
   .post {
     width: 100%;
-  }
-
-  .login-signup {
-    display: flex;
-  }
-
-  .login-component {
-    align-self: center;
-    flex-grow: 1;
-  }
-
-  .register-component {
-    align-self: center;
-    flex-grow: 1;
   }
 
   .trending-class-parent {

@@ -43,7 +43,7 @@ const Login = ({ mode, setMode, setLoading }) => {
   };
 
   return (
-    <form className="login-component flex flex-col w-1/4 border-black m-12 content-center">
+    <form className="flex flex-col md:w-full w-1/4 m-12 content-center">
       <div className="m-5 self-center font-bold text-white text-xl">HEY...</div>
       <input
         className="h-5 w-72  text-white self-center bg-[#202021] rounded-lg p-5 m-2"
