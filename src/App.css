@@ -1,48 +1,65 @@
 @media screen and (max-width: 1040px) {
-  .login-component {
-    width: 400px;
+  * {
+    max-width: 100%;
   }
 
-  .register-component {
-    width: 400px;
+  .write-post-parent {
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+
+  .write-post {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .write-post-title {
+    width: 100%;
+  }
+
+  .profile-class-parent {
+    display: flex;
+    justify-content: center;
   }
 
   .profile-class {
     position: relative;
-    align-self: center;
     flex-grow: 1;
-    min-width: 400px;
-  }
-
-  .trending-class {
-    align-self: center;
-    flex-grow: 1;
-    min-width: 400px;
-    position: relative;
+    max-width: 400px;
   }
 
   .homescreen {
+    display: flex;
     flex-direction: column;
-    border: 2px solid black;
   }
 
   .post {
-    min-width: 400px;
-    flex-grow: 1;
-    align-self: center;
+    width: 100%;
   }
 
-  .writepost {
-    flex-direction: column;
-    min-width: 400px;
-    flex-grow: 1;
-    align-self: center;
+  .login-signup {
+    display: flex;
   }
 
-  .writepost-end {
-    flex-direction: column;
-    min-width: 400px;
-    margin-right: 50px;
+  .login-component {
     align-self: center;
+    flex-grow: 1;
+  }
+
+  .register-component {
+    align-self: center;
+    flex-grow: 1;
+  }
+
+  .trending-class-parent {
+    display: flex;
+    justify-content: center;
+  }
+
+  .trending-class {
+    position: relative;
+    flex-grow: 1;
+    max-width: 400px;
   }
 }
