@@ -10,13 +10,22 @@ import { useLocation, useNavigate } from "react-router-dom";
 const WritePost = () => {
   const { state } = useLocation();
 
+  let isLoggedIn = true;
+
+  let edit = false;
+  let oldTitle = "";
+
+  if (state == null) {
+    isLoggedIn = false;
+  } else {
+    console.log(state);
+
+    edit = state.edit;
+
+    oldTitle = state.title;
+  }
+
   const navigate = useNavigate();
-
-  console.log(state);
-
-  const edit = state.edit;
-
-  const oldTitle = state.title;
 
   const [title, setTitle] = useState("");
 
@@ -25,8 +34,6 @@ const WritePost = () => {
   const [tag, setTag] = useState(null);
 
   const [loading, setLoading] = useState(false);
-
-  const isLoggedIn = localStorage.getItem("isLoggedIn");
 
   const options = [
     "C++",
@@ -121,65 +128,69 @@ const WritePost = () => {
 
   return (
     <>
-      {loading === true ? (
-        <ActivityLoader loading={loading} />
-      ) : (
-        <div className="write-post-parent h-full">
-          <div className="write-post flex flex-row h-full ">
-            <div className="write-post-title flex  flex-col h-2/3 w-1/2 mt-10 ml-10">
-              <input
-                value={title}
-                onChange={(e) => {
-                  setTitle(e.target.value);
-                }}
-                className="write-post-body p-2 rounded-md text-white text-3xl bg-[#202021]"
-                type="text"
-                placeholder="Title"
-              />
-              <textarea
-                value={post}
-                onChange={(e) => {
-                  setPost(e.target.value);
-                }}
-                className="mt-5 text-white rounded-md bg-[#202021] text-xl grow p-2"
-                placeholder="Start writing here!!!"
-              />
-            </div>
-            <div className="write-post-btn flex flex-row mt-10">
-              <ReactDropdown
-                className="ml-10 h-12 bg-[#1f2833] text-white w-64 text-center rounded-md p-3 mt-5"
-                options={options}
-                onChange={(e) => {
-                  setTag(e);
-                }}
-                value={tag}
-                placeholder="Select Tag"
-              />
+      {isLoggedIn === true ? (
+        loading === true ? (
+          <ActivityLoader loading={loading} />
+        ) : (
+          <div className="write-post-parent h-full">
+            <div className="write-post flex flex-row h-full ">
+              <div className="write-post-title flex  flex-col h-2/3 w-1/2 mt-10 ml-10">
+                <input
+                  value={title}
+                  onChange={(e) => {
+                    setTitle(e.target.value);
+                  }}
+                  className="write-post-body p-2 rounded-md text-white text-3xl bg-[#202021]"
+                  type="text"
+                  placeholder="Title"
+                />
+                <textarea
+                  value={post}
+                  onChange={(e) => {
+                    setPost(e.target.value);
+                  }}
+                  className="mt-5 text-white rounded-md bg-[#202021] text-xl grow p-2"
+                  placeholder="Start writing here!!!"
+                />
+              </div>
+              <div className="write-post-btn flex flex-row mt-10">
+                <ReactDropdown
+                  className="ml-10 h-12 bg-[#1f2833] text-white w-64 text-center rounded-md p-3 mt-5"
+                  options={options}
+                  onChange={(e) => {
+                    setTag(e);
+                  }}
+                  value={tag}
+                  placeholder="Select Tag"
+                />
 
-              {edit == true ? (
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    editPost();
-                  }}
-                  className="ml-10 bg-[#1f2833] text-white  rounded-md p-3 mt-5 h-12"
-                >
-                  Update
-                </button>
-              ) : (
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    makePost();
-                  }}
-                  className="ml-10 bg-[#1f2833] text-white  rounded-md p-3 mt-5 h-12"
-                >
-                  Submit
-                </button>
-              )}
+                {edit == true ? (
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      editPost();
+                    }}
+                    className="ml-10 bg-[#1f2833] text-white  rounded-md p-3 mt-5 h-12"
+                  >
+                    Update
+                  </button>
+                ) : (
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      makePost();
+                    }}
+                    className="ml-10 bg-[#1f2833] text-white  rounded-md p-3 mt-5 h-12"
+                  >
+                    Submit
+                  </button>
+                )}
+              </div>
             </div>
           </div>
-        </div>
+        )
+      ) : (
+        <div className="text-white text-2xl">You are not logged in</div>
       )}
     </>
   );

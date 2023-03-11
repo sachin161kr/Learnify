@@ -36,7 +36,12 @@ const Login = ({ mode, setMode, setLoading }) => {
           localStorage.setItem("email", res.data.email);
           setLoading(false);
           alert("Login Success");
-          navigate("/homescreen", { replace: true });
+          navigate("/homescreen", {
+            replace: true,
+            state: {
+              isLoggedIn: true,
+            },
+          });
         }
       })
       .catch(function (error) {
