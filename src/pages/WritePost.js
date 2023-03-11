@@ -72,7 +72,12 @@ const WritePost = () => {
       .then(() => {
         setLoading(false);
         alert("Successfully Updated");
-        navigate("/homescreen", { replace: true });
+        navigate("/homescreen", {
+          replace: true,
+          state: {
+            isLoggedIn: true,
+          },
+        });
       })
       .catch(() => {
         setLoading(false);
@@ -116,7 +121,12 @@ const WritePost = () => {
         setLoading(false);
         console.log("Post Success");
         alert("Post Success");
-        navigate("/homescreen", { replace: true });
+        navigate("/homescreen", {
+          replace: true,
+          state: {
+            isLoggedIn: true,
+          },
+        });
       })
       .catch((e) => {
         setLoading(false);
