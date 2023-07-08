@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/sachin161kr.github.io/Learnify-Static/static/css/main.8531f127.css",
+    "main.js": "/sachin161kr.github.io/Learnify-Static/static/js/main.c21ff9c8.js",
+    "static/js/787.53d00341.chunk.js": "/sachin161kr.github.io/Learnify-Static/static/js/787.53d00341.chunk.js",
+    "index.html": "/sachin161kr.github.io/Learnify-Static/index.html",
+    "main.8531f127.css.map": "/sachin161kr.github.io/Learnify-Static/static/css/main.8531f127.css.map",
+    "main.c21ff9c8.js.map": "/sachin161kr.github.io/Learnify-Static/static/js/main.c21ff9c8.js.map",
+    "787.53d00341.chunk.js.map": "/sachin161kr.github.io/Learnify-Static/static/js/787.53d00341.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8531f127.css",
+    "static/js/main.c21ff9c8.js"
+  ]
+}
